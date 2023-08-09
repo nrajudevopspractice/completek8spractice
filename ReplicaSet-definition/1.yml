@@ -6,14 +6,14 @@ metadata:
 spec:
   replicas: 3
   selector:
-    metaLabels:
-       tier: backend
-    template:
-      metadata:
-        name: sample-pod
-        labels:
-          tier: backend
-      spec:
-        containers:
-          name: nginx
+    matchLabels:
+      tier: backend
+  template:
+    metadata:
+      name: sample-pod
+      labels:
+        tier: backend
+    spec:
+      containers:
+        - name: nginx
           image: nginx 
