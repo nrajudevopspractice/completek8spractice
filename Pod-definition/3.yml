@@ -2,20 +2,50 @@
 apiVersion: v1
 kind: Pod
 metadata:
+  name: business-dev
   labels:
-    env: backend
+    env: dev
+    tier: backend
 spec:
   containers:
-    - name: httpd
-      image: httpd:latest
+    - name: nginx
+      image: nginx
 
 ---
 apiVersion: v1
 kind: Pod
 metadata:
+  name: business
   labels:
-    env: frontend
+    env: prod
+    tier: frontend
 spec:
   containers:
-    - name: web
-      image: nginx:latest
+    - name: nginx
+      image: nginx
+
+--- 
+apiVersion: v1
+kind: Pod
+metadata:
+  name: web-dev
+  labels:
+    env: dev
+    tier: frontend
+spec:
+  containers:
+    - name: httpd
+      image: httpd
+
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: web
+  labels:
+    env: prod
+    tier: backend
+spec:
+  containers:
+    - name: httpd
+      image: httpd
