@@ -1,0 +1,16 @@
+---
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: demo-rs
+spec:
+  replicas: 3
+  selector:
+    metaLabels:
+       env: dev
+       tier: backend
+    template:
+       metadata:
+         labels:
+            env: dev
+            tier: backend
