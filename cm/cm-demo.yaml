@@ -1,13 +1,8 @@
 apiVersion: v1
-kind: Pod
-metadata: 
-   name: configmap-demo-pod
-   namespace: cm-test-ns
-spec:
-  containers:
-  - name: cm-container
-    image: alpine
-    command: [ "sleep", "1d" ]
-    envFrom:
-      - configMapRef:
-          name: cm-demo
+data:
+  key1: abc
+  key2: efg
+kind: ConfigMap
+metadata:
+  name: cm-demo
+  namespace: cm-test-ns
