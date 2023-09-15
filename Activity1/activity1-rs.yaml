@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Replicaset
+metadata:
+  name: activity1-rs
+  namespace: activity1
+spec:
+  minReadySeconds: 20
+  replicas: 10
+  selector:
+    matchExpressions:
+      - key: name
+        operator: In
+        values: apps
+      - key: env
+        operator: NotIn
+        values: 
+          - Prod
+          - Uat
+template:
+  metadata:
+    name: apps
+    spec:
+     automountServiceAccountToken: False
+     container:
+       - name: nop
+         image:
+         ports:
+           - containerPort: 80
+              protocol: TCP
+   
+    

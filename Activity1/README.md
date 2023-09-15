@@ -1,8 +1,10 @@
-### Activity1 to understand K8s WORKLOADS
 
+# Activity1 to understand K8s WORKLOADS
 
-    >Pods
+- Pods
 
-    >Namespace
+- Namespace
 
-    >Replicasets
+- Replicasets
+
+## Created there respective manifests files for reference. 

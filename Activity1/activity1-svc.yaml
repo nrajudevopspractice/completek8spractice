@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: Service
+metadata: 
+  name: activity1-svc
+  namespace: activity1
+spec:
+  selector: 
